@@ -34,7 +34,7 @@ def create_emoji_dict(comments: list) -> dict:
             emoji_set.update(emoji.distinct_emoji_list(comments[i]))
     for emo in emoji_set:
         if emosent.get_emoji_sentiment_rank(emo):
-            emoji_dict[emo] = "positive" if emosent.get_emoji_sentiment_rank(emo)["sentiment_score"] > 0 else "negative"
+            emoji_dict[emo] = " positive " if emosent.get_emoji_sentiment_rank(emo)["sentiment_score"] > 0 else " negative "
     return emoji_dict
 
 def normalize_emoji(comment: str, emoji_dict: dict) -> str:
